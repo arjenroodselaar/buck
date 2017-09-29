@@ -17,14 +17,10 @@ import com.facebook.buck.verilog.VerilogDesignLibraryCreateStep;
 import com.google.common.collect.ImmutableList;
 import java.nio.file.Path;
 
-import com.facebook.buck.log.Logger;
-
 public class VerilogLibrary extends AbstractBuildRuleWithDeclaredAndExtraDeps {
 
   private final VerilogBuckConfig verilogBuckConfig;
   private final Path output;
-
-  private static final Logger LOG = Logger.get(VerilogLibrary.class);
 
   public VerilogLibrary(
       BuildTarget buildTarget,
