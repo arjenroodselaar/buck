@@ -161,6 +161,7 @@ import com.facebook.buck.swift.toolchain.SwiftPlatformsProvider;
 import com.facebook.buck.util.HumanReadableException;
 import com.facebook.buck.util.ProcessExecutor;
 import com.facebook.buck.util.environment.Platform;
+import com.facebook.buck.verilog.VerilogBuckConfig;
 import com.facebook.buck.verilog.VerilogLibraryDescription;
 import com.facebook.buck.versions.VersionedAliasDescription;
 import com.facebook.buck.zip.rules.ZipFileDescription;
@@ -633,7 +634,7 @@ public class KnownBuildRuleTypes {
     builder.register(new XcodePostbuildScriptDescription());
     builder.register(new XcodePrebuildScriptDescription());
     builder.register(new XcodeWorkspaceConfigDescription());
-    builder.register(new VerilogLibraryDescription());
+    builder.register(new VerilogLibraryDescription(new VerilogBuckConfig(config)));
     builder.register(new ZipFileDescription());
 
     builder.setCxxPlatforms(cxxPlatforms);

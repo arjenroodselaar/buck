@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Emulate running the ModelSim vlib command and create a design library
+# directory.
+
+set -e
+
+[[ $# -eq 1 ]] || (echo "$0 <path>"; exit 1)
+
+mkdir "$1"
+touch "$1/_info"

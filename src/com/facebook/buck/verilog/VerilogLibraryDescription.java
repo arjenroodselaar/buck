@@ -28,9 +28,17 @@ import com.facebook.buck.rules.HasDeclaredDeps;
 import com.facebook.buck.rules.HasSrcs;
 import com.facebook.buck.rules.TargetGraph;
 import com.facebook.buck.util.immutables.BuckStyleImmutable;
+import com.facebook.buck.verilog.VerilogBuckConfig;
 import org.immutables.value.Value;
 
 public class VerilogLibraryDescription implements Description<VerilogLibraryDescriptionArg> {
+
+  private final VerilogBuckConfig verilogBuckConfig;
+
+  public VerilogLibraryDescription(VerilogBuckConfig verilogBuckConfig) {
+    this.verilogBuckConfig = verilogBuckConfig;
+  }
+
   @Override
   public Class<VerilogLibraryDescriptionArg> getConstructorArgType() {
     return VerilogLibraryDescriptionArg.class;
@@ -48,7 +56,8 @@ public class VerilogLibraryDescription implements Description<VerilogLibraryDesc
     return new VerilogLibrary(
         buildTarget,
         projectFilesystem,
-        params);
+        params,
+        verilogBuckConfig);
   }
 
   @BuckStyleImmutable

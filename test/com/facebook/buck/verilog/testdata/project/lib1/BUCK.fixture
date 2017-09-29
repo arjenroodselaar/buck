@@ -1,0 +1,10 @@
+verilog_library(
+    name = 'lib1',
+    srcs = [
+        'module1.sv',
+        'module2.sv',
+    ],
+    visibility = [
+        'PUBLIC'
+    ]
+)
